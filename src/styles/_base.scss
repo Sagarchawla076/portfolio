@@ -1,0 +1,91 @@
+:root {
+  --color-primary: #04c2c9; //
+  --color-primary-dark: #00a1a7; //
+  --color-secondary: #101d2c;
+  --color-black-light: #4d4d4d; //
+  --color-grey-light-1: #f9f7f6;
+  --color-grey-light-2: #737373; //
+  --color-grey-light-3: #f2f2f2; //
+
+  --color-span: #95dac1; //
+  --color-white: #fff; //
+  --color-contact: #252934; //
+  --color-form: #1e242c; //
+  --color-arrow: #e31b6d; //
+  --color-footer: #262f38; //
+  --font-primary: "Nunito", sans-serif;
+  --font-display: "Josefin Sans", sans-serif;
+}
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint==tab-land) {
+    @media (max-width: 72.5em) {
+      @content;
+    }
+  }
+  // @if ($breakpoint==tab-land-s) {
+  //   @media (max-width: 64.5em) {
+  //     @content;
+  //   }
+  // }
+  @if ($breakpoint==tab-port) {
+    @media (max-width: 55em) {
+      //880px
+      @content;
+    }
+  }
+
+  @if ($breakpoint==phone-l) {
+    @media (max-width: 41.56em) {
+      //664px
+      @content;
+    }
+  }
+
+  @if ($breakpoint==phone-md) {
+    @media (max-width: 30em) {
+      //480x
+      @content;
+    }
+  }
+  @if ($breakpoint==phone-port-min) {
+    @media (min-width: 55em) {
+      @content;
+    }
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  @include respond(tab-land) {
+    font-size: 1.6rem;
+  }
+  @include respond(tab-port) {
+    font-size: 1.3rem;
+  }
+  position: relative;
+}
+
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 100vh repeat(3, min-content) max-content 150vh min-content;
+  grid-template-columns: repeat(
+    16,
+    [col-start] minmax(min-content, 1fr) [col-end]
+  );
+}

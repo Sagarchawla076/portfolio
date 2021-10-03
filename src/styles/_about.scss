@@ -1,0 +1,67 @@
+.about {
+  grid-column: col-start 1 / col-end 16;
+  display: grid;
+  gap: 4rem;
+  justify-items: center;
+  // padding: 0 2rem;
+  margin-top: 10rem;
+  &__heading {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    &--text {
+      color: var(--color-black-light);
+      font-size: 4rem;
+      letter-spacing: 1.5px;
+    }
+    &--underline {
+      width: 8rem;
+      height: 0.5rem;
+      background-color: var(--color-black-light);
+    }
+  }
+  &__card {
+    display: grid;
+    justify-items: center;
+    gap: 1.5rem;
+    &--hexagon {
+      width: 13rem;
+      height: 11rem;
+      background-color: var(--color-primary);
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        fill: var(--color-white);
+        width: 6rem;
+        height: 6rem;
+      }
+    }
+    &--name {
+      color: var(--color-black-light);
+      font-weight: 700;
+      font-size: 2.5rem;
+      text-transform: capitalize;
+    }
+    &--para {
+      text-align: center;
+      color: var(--color-grey-light-2);
+    }
+  }
+  &__container {
+    justify-self: stretch;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    padding: 5vw;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+      row-gap: 5rem;
+    }
+    @include respond(phone-md) {
+      padding: 0;
+    }
+  }
+}

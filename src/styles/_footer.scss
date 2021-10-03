@@ -1,0 +1,39 @@
+.footer {
+  grid-column: col-start 1 / col-end 16;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: 4rem;
+  background-color: var(--color-secondary);
+  padding-bottom: 3rem;
+  &__icon {
+    background-color: var(--color-arrow);
+    padding: 1rem 0.6rem;
+    margin-top: -2rem;
+    z-index: 3;
+    svg {
+      fill: #fff;
+      font-size: 4rem;
+    }
+  }
+  &__links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+  }
+  &__link {
+    background-color: var(--color-footer);
+    padding: 2rem;
+    svg {
+      fill: #fff;
+      font-size: 2.5rem;
+    }
+  }
+  &__copyright {
+    color: var(--color-grey-light-2);
+    font-size: 1.5rem;
+    span {
+      color: var(--color-arrow);
+    }
+  }
+}
