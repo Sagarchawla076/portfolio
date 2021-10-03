@@ -9,7 +9,7 @@ function Skills() {
     <section className="skills">
       <div className="skills__photo">
         <img
-          src="http://findmatthew.com/img/me.png"
+          src="./images/sagar.png"
           className="skills__photo--img"
           alt="my"
         ></img>
